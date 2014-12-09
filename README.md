@@ -1,11 +1,12 @@
 # slideshow gem - slide show (S9) command line tool -  a free web alternative to PowerPoint and Keynote in ruby
 
-* docu   :: [slideshow-s9.github.io](http://slideshow-s9.github.io)
-* source :: [github.com/slideshow-s9/slideshow](https://github.com/slideshow-s9/slideshow)
-* bugs   :: [github.com/slideshow-s9/slideshow/issues](https://github.com/slideshow-s9/slideshow/issues)
-* gem    :: [rubygems.org/gems/slideshow](https://rubygems.org/gems/slideshow)
-* rdoc   :: [rubydoc.info/gems/slideshow](http://rubydoc.info/gems/slideshow)
-* forum  :: [groups.google.com/group/webslideshow](http://groups.google.com/group/webslideshow)
+* docu      :: [slideshow-s9.github.io](http://slideshow-s9.github.io)
+* source    :: [github.com/slideshow-s9/slideshow](https://github.com/slideshow-s9/slideshow)
+* bugs      :: [github.com/slideshow-s9/slideshow/issues](https://github.com/slideshow-s9/slideshow/issues)
+* gem       :: [rubygems.org/gems/slideshow](https://rubygems.org/gems/slideshow)
+* rdoc      :: [rubydoc.info/gems/slideshow](http://rubydoc.info/gems/slideshow)
+* templates :: [github.com/slideshow-templates](https://github.com/slideshow-templates)
+* forum     :: [groups.google.com/group/webslideshow](http://groups.google.com/group/webslideshow)
 
 
 ## DESCRIPTION
