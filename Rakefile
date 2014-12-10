@@ -15,7 +15,7 @@ Hoe.spec 'slideshow' do
 
   self.extra_deps = [
     ['slideshow-models',   '>= 2.4.0'],   ## Note: pull in all deps via slideshow-models (e.g. props, textutils, etc.)
-    ['slideshow-templates','>= 2.4.1'],
+    ['slideshow-templates','>= 2.4.0'],
     ['gli', '>= 2.5.6']
     ## ['wikicloth', '>= 0.8.0']  make it a soft dependency   # mediawiki markup engine
     ## ['RedCloth','>= 4.2.9']    make it a soft dependency   # textile markup engine
