@@ -1,23 +1,21 @@
 require 'hoe'
-require './lib/slideshow/version.rb'
+require './lib/slideshow/cli/version.rb'
 
 Hoe.spec 'slideshow' do
 
-  self.version = Slideshow::VERSION
+  self.version = SlideshowCli::VERSION
 
   self.summary = 'Slide Show (S9) - A Free Web Alternative to PowerPoint and Keynote in Ruby'
-  self.urls     = ['http://slideshow-s9.github.io']
+  self.description = summary
+
+  self.urls     = ['https://github.com/slideshow-s9/slideshow']
 
   self.author  = 'Gerald Bauer'
   self.email   = 'webslideshow@googlegroups.com'
 
   self.extra_deps = [
-    ['props','>= 1.0.0'],
-    ['markdown','>= 1.1.1'],
-    ['textutils','>= 0.6.8'],
-    ['pakman','>= 0.5.0'],
-    ['activesupport', '>= 3.2.6'],
-    ['logutils','>= 0.6.0'],
+    ['slideshow-models',   '>= 2.4.0'],   ## Note: pull in all deps via slideshow-models (e.g. props, textutils, etc.)
+    ['slideshow-templates','>= 2.4.1'],
     ['gli', '>= 2.5.6']
     ## ['wikicloth', '>= 0.8.0']  make it a soft dependency   # mediawiki markup engine
     ## ['RedCloth','>= 4.2.9']    make it a soft dependency   # textile markup engine
@@ -26,6 +24,13 @@ Hoe.spec 'slideshow' do
   # switch extension to .markdown for gihub formatting
   self.readme_file  = 'README.md'
   self.history_file = 'HISTORY.md'
+
+  self.licenses = ['Public Domain']
+
+  self.spec_extras = {
+    required_ruby_version: '>= 1.9.2'
+  }
+
 
   self.post_install_message =<<EOS
 ******************************************************************************
@@ -55,4 +60,5 @@ https://groups.google.com/group/webslideshow
 
 ******************************************************************************
 EOS
+
 end

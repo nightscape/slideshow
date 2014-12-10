@@ -79,12 +79,18 @@ Gems versions:
   - fetcher #{Fetcher::VERSION}
   - markdown #{Markdown::VERSION}
   - textutils #{TextUtils::VERSION}
+  - logutils #{LogKernel::VERSION}
   - props #{Props::VERSION}
 
-        Env home: #{Env.home}
-Slideshow config: #{config.config_dir}
- Slideshow cache: #{config.cache_dir}
-  Slideshow root: #{Slideshow.root}
+  - slideshow-models #{Slideshow::VERSION}
+  - slideshow-templates #{SlideshowTemplates::VERSION}
+  - slideshow #{SlideshowCli::VERSION}
+
+                 Env home: #{Env.home}
+         Slideshow config: #{config.config_dir}
+          Slideshow cache: #{config.cache_dir}
+           Slideshow root: #{Slideshow.root}
+  SlideshowTemplates root: #{SlideshowTemplates.root}
 
 EOS
 

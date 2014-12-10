@@ -1,5 +1,9 @@
 # encoding: utf-8
 
+###
+# Note: Slideshow.version already used by core, that is, slideshow-models
+#
+
 module SlideshowCli
 
   MAJOR = 2

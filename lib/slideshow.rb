@@ -1,50 +1,37 @@
 # encoding: utf-8
 
+$RUBYLIBS_DEBUG = true
+
+
 require 'slideshow/models'
 
+require 'slideshow/templates'   ## for now add builtin templates (remove later? why? why not?)
 
-# more core and stlibs    -- remove libs already included in models
-require 'optparse'
-require 'erb'
-require 'logger'               # todo: remove!! replaced by logutils gem
-require 'fileutils'
-require 'pp'
-require 'uri'
-require 'net/http'
-require 'net/https'
-require 'ostruct'
-require 'date'
-require 'yaml'
-require 'cgi'
+## todo/fix: check slideshow-models - remove Env.slideshowopt here or in models?
+#
+#class Env
+#  def self.slideshowopt
+#    ENV[ 'SLIDESHOWOPT' ]
+#  end
+#end # class Env
 
 
-# required gems
-require 'active_support/all'
+## more 3rd party gems
 
-require 'logutils'       # logger utils library
-
-require 'markdown'          # default markdown library
-require 'fetcher'           # fetch docs and blogs via http, https, etc.
-
-require 'props'             # manage settings/env
-
-class Env
-  def self.slideshowopt
-    ENV[ 'SLIDESHOWOPT' ]
-  end
-end # class Env
-
-require 'textutils'     # text filters and helpers
-require 'pakman'        # template pack manager
+require 'gli'
 
 
 # our own code
 require 'slideshow/cli/version'        # note: let version always go first
 require 'slideshow/cli/opts'
+require 'slideshow/cli/main_utils'
+require 'slideshow/cli/main'
+
 
 
 module Slideshow
 
+=begin
   def self.main_old
     
     # allow env variable to set RUBYOPT-style default command line options
@@ -57,10 +44,10 @@ module Slideshow
     
     Runner.new.run(args)
   end
+=end
 
   def self.main
-    require 'slideshow/cli/main'
-    ## Runner.new.run(ARGV) - old code
+    exit Tool.new.run(ARGV)
   end
 
 

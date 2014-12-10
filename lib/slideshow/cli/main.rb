@@ -1,32 +1,55 @@
 # encoding: utf-8
 
-
-require 'gli'
-
-require 'slideshow/cli/main_utils'
+### NOTE: wrap gli config into a class
+##  see github.com/davetron5000/gli/issues/153
 
 
-include GLI::App
+module Slideshow
 
-program_desc 'Slide Show (S9) - a free web alternative to PowerPoint and Keynote in Ruby'
+  class Tool
+     def initialize
+       LogUtils::Logger.root.level = :info   # set logging level to info 
+     end
 
-version Slideshow::VERSION
+     def run( args )
+       puts SlideshowCli.banner
+       Toolii.run( args )
+     end
+  end
 
+
+  class Toolii
+    extend GLI::App
+
+   def self.logger=(value) @@logger=value; end
+   def self.logger()       @@logger; end
+
+   ## todo: find a better name e.g. change to settings? config? safe_opts? why? why not?
+   def self.opts=(value)  @@opts = value; end
+   def self.opts()        @@opts; end
+
+   def self.config=(value)  @@config = value; end
+   def self.config()        @@config; end
+
+   def self.headers=(value)  @@headers = value; end
+   def self.headers()        @@headers; end
 
 ## some setup code 
-
-LogUtils::Logger.root.level = :info   # set logging level to info 
-
-logger = LogUtils::Logger.root
-
-opts    = Slideshow::Opts.new
+logger  = LogUtils::Logger.root
+opts    = Slideshow::Opts.new 
 config  = Slideshow::Config.new( opts )
 headers = Slideshow::Headers.new( config )  ##  NB: needed for build - move into build - why? why not?
-
 
 config.load
 
 
+
+program_desc 'Slide Show (S9) - a free web alternative to PowerPoint and Keynote in Ruby'
+
+version SlideshowCli::VERSION
+
+
+=begin
 ## gets all merged in one paragraph - does not honor whitespace
 xxx_program_long_desc = <<EOS
          
@@ -51,6 +74,7 @@ Further information:
   http://slideshow-s9.github.io
 
 EOS
+=end
 
 
 ## "global" options (switches/flags)
@@ -267,4 +291,7 @@ on_error do |e|
 end
 
 
-exit run(ARGV)
+#### exit run(ARGV)   ## note: use Toolii.run( ARGV ) outside of class
+
+  end  # class Toolii
+end  # module Slideshow
