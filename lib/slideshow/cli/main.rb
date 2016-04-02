@@ -53,10 +53,7 @@ xxx_program_long_desc = <<EOS
 Slide Show (S9) is a free web alternative to PowerPoint or Keynote in Ruby
 
 Examples:
-  slideshow microformats
-  slideshow microformats.text            # Process slides using Markdown (#{config.known_markdown_extnames.join(', ')})
-  slideshow microformats.textile         # Process slides using Textile (#{config.known_textile_extnames.join(', ')})
-  slideshow microformats.rst             # Process slides using reStructuredText (#{config.known_rest_extnames.join(', ')})
+  slideshow microformats.text
   slideshow -o slides microformats       # Output slideshow to slides folder
 
 More examles:
@@ -254,10 +251,6 @@ pre do |g,c,o,args|
 
     # dump Slideshow settings
     config.dump
-    puts
-      
-    # dump Markdown settings
-    Markdown.dump
     puts
   end
 
