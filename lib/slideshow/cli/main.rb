@@ -31,14 +31,11 @@ module Slideshow
    def self.config=(value)  @@config = value; end
    def self.config()        @@config; end
 
-   def self.headers=(value)  @@headers = value; end
-   def self.headers()        @@headers; end
 
 ## some setup code 
 logger  = LogUtils::Logger.root
 opts    = Slideshow::Opts.new 
 config  = Slideshow::Config.new( opts )
-headers = Slideshow::Headers.new( config )  ##  NB: needed for build - move into build - why? why not?
 
 config.load
 
@@ -135,14 +132,8 @@ command [:build, :b] do |c|
     
     PluginLoader.new( config ).load_plugins  # check for optional plugins/extension in ./lib folder
 
-    finder = FileFinder.new( config )
-
     args.each do |arg|
-      files = finder.find_files( arg )
-      files.each do |file| 
-       ### fix/todo: reset/clean headers
-        Slideshow::Gen.new( opts, config, headers ).create_slideshow( file )
-      end
+      Slideshow::Gen.new( config ).create_slideshow( arg )
     end
  
   end
@@ -155,7 +146,7 @@ command [:list,:ls,:l] do |c|
   c.action do |g,o,args|
     logger.debug 'hello from list command'
     
-    Slideshow::List.new( opts, config ).run   ### todo: remove opts (merge access into config)
+    Slideshow::List.new( config ).run   ### todo: remove opts (merge access into config)
   end
 end
 
@@ -171,11 +162,11 @@ command [:install,:i] do |c|
     logger.debug 'hello from install command'
     
     if opts.fetch_all?
-      Slideshow::Fetch.new( opts, config ).fetch_all  ## todo: remove opts merge into config
+      Slideshow::Fetch.new( config ).fetch_all  ## todo: remove opts merge into config
     end
     
     args.each do |arg|
-      Slideshow::Fetch.new( opts, config ).fetch( arg )  ## todo: remove opts merge into config
+      Slideshow::Fetch.new( config ).fetch( arg )  ## todo: remove opts merge into config
     end
   end
 end
@@ -187,8 +178,10 @@ command [:update,:u] do |c|
   c.action do |g,o,args|
     logger.debug 'hello from update command'
 
-    # todo: move update to its own command
-    Slideshow::Fetch.new( opts, config ).update()
+    ##########
+    # todo: move update to its own command !!!!!!!!!!!!!!!!!!!
+    
+    Slideshow::Fetch.new( config ).update()
   end
 end
 
@@ -211,7 +204,7 @@ command [:new,:n] do |c|
     logger.debug 'hello from new command'
 
     ##  use quick_manifest (default) otherwise pass along/use args
-    Slideshow::Quick.new( opts, config ).run  ### todo: remove opts
+    Slideshow::Quick.new( config ).run
 
   end
 end
@@ -231,7 +224,7 @@ command [:plugins,:plugin,:p] do |c|
   c.action do
     logger.debug 'hello from plugin command'
 
-    Slideshow::Plugins.new( opts, config ).run  ### todo: remove opts (merge access into config)
+    Slideshow::Plugins.new( config ).run
   end
 end
 
