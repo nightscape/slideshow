@@ -11,19 +11,17 @@ Hoe.spec 'slideshow' do
   self.urls     = ['https://github.com/slideshow-s9/slideshow']
 
   self.author  = 'Gerald Bauer'
-  self.email   = 'webslideshow@googlegroups.com'
+  self.email   = 'wwwmake@googlegroups.com'
 
   self.extra_deps = [
-    ['slideshow-models',   '>= 2.4.0'],   ## Note: pull in all deps via slideshow-models (e.g. props, textutils, etc.)
-    ['slideshow-templates','>= 2.4.0'],
-    ['gli', '>= 2.5.6']
-    ## ['wikicloth', '>= 0.8.0']  make it a soft dependency   # mediawiki markup engine
-    ## ['RedCloth','>= 4.2.9']    make it a soft dependency   # textile markup engine
+    ['slideshow-models',   '>= 3.0.0'],   ## Note: pull in all deps via slideshow-models (e.g. props, textutils, etc.)
+    ['slideshow-templates','>= 3.0.0'],
+    ['gli', '>= 2.13.4']
   ]
 
   # switch extension to .markdown for gihub formatting
-  self.readme_file  = 'README.md'
-  self.history_file = 'HISTORY.md'
+  # self.readme_file  = 'README.md'
+  # self.history_file = 'HISTORY.md'
 
   self.licenses = ['Public Domain']
 
@@ -56,9 +54,10 @@ or add some extra (plugins) helpers (left, right, etc). Example:
   $ slideshow install plugins
 
 Questions? Comments? Send them along to the mailing list.
-https://groups.google.com/group/webslideshow
+https://groups.google.com/group/wwwmake
 
 ******************************************************************************
 EOS
 
 end
+

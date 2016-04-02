@@ -6,7 +6,7 @@
 * gem       :: [rubygems.org/gems/slideshow](https://rubygems.org/gems/slideshow)
 * rdoc      :: [rubydoc.info/gems/slideshow](http://rubydoc.info/gems/slideshow)
 * templates :: [github.com/slideshow-templates](https://github.com/slideshow-templates)
-* forum     :: [groups.google.com/group/webslideshow](http://groups.google.com/group/webslideshow)
+* forum     :: [groups.google.com/group/wwwmake](http://groups.google.com/group/wwwmake)
 
 
 ## DESCRIPTION
@@ -16,7 +16,7 @@ using a wiki-style markup language that's easy-to-write and easy-to-read.
 The Slide Show (S9) project also collects and welcomes themes and ships
 "out-of-the-gem" with built-in support for "loss-free" gradient vector graphics themes.
 
-~~~
+```
 SYNOPSIS
     slideshow [global options] command [command options] [arguments...]
 
@@ -35,12 +35,12 @@ COMMANDS
     new, n             - Generate quick starter sample
     about, a           - (Debug) Show more version info
     help               - Shows a list of commands or help for one command
-~~~
+```
 
 
 ### `build` Command
 
-~~~
+```
 NAME
     build - Build slideshow
 
@@ -57,17 +57,15 @@ COMMAND OPTIONS
 
 EXAMPLES
     slideshow build microformats
-    slideshow build microformats.text            # Process slides using Markdown
-    slideshow build microformats.textile         # Process slides using Textile
-    slideshow build microformats.rst             # Process slides using reStructuredText
+    slideshow build microformats.text            
     slideshow build microformats -o slides       # Output slideshow to slides folder
     slideshow build microformats -t s5blank      # Use your own slide show templates (e.g. s5blank)
-~~~
+```
 
 
 ### `list` Command
 
-~~~
+```
 NAME
     list - List installed template packs
 
@@ -77,12 +75,12 @@ SYNOPSIS
 EXAMPLES
     slideshow list
     slideshow ls
-~~~
+```
 
 
 ### `install` Command
 
-~~~
+```
 NAME
     install - Install template pack
 
@@ -95,12 +93,12 @@ COMMAND OPTIONS
 EXAMPLES
     slideshow install impress.js
     slideshow install https://raw.github.com/.../impress.js.txt
-~~~
+```
 
 
 ### `new` Command
 
-~~~
+```
 NAME
     new - Generate quick starter sample
 
@@ -114,7 +112,7 @@ COMMAND OPTIONS
 EXAMPLES
     slideshow new
     slideshow new -t impress.js
-~~~
+```
 
 
 ## INSTALL
@@ -130,5 +128,7 @@ Use it as you please with no restrictions whatsoever.
 
 ## QUESTION? COMMENTS?
 
-Send them along to the [Free Web Slide Show Alternatives (S5, S6, S9, Slidy And Friends) Forum/Mailing List](http://groups.google.com/group/webslideshow).
+Send them along to the [wwwmake forum/mailing list](http://groups.google.com/group/wwwmake).
 Thanks!
+
+
