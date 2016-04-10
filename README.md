@@ -21,7 +21,7 @@ SYNOPSIS
     slideshow [global options] command [command options] [arguments...]
 
 VERSION
-    2.0.0
+    3.0.0
 
 GLOBAL OPTIONS
     -c, --config=PATH - Configuration Path (default: ~/.slideshow)
@@ -56,10 +56,9 @@ COMMAND OPTIONS
     -t, --template=MANIFEST - Template Manifest (default: s6)
 
 EXAMPLES
-    slideshow build microformats
-    slideshow build microformats.text            
-    slideshow build microformats -o slides       # Output slideshow to slides folder
-    slideshow build microformats -t s5blank      # Use your own slide show templates (e.g. s5blank)
+    slideshow build microformats.text
+    slideshow build microformats.text -o slides       # Output slideshow to slides folder
+    slideshow build microformats.text -t s5blank      # Use your own slide show templates (e.g. s5blank)
 ```
 
 
