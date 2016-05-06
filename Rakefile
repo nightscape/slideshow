@@ -14,7 +14,7 @@ Hoe.spec 'slideshow' do
   self.email   = 'wwwmake@googlegroups.com'
 
   self.extra_deps = [
-    ['slideshow-models',   '>= 3.0.0'],   ## Note: pull in all deps via slideshow-models (e.g. props, textutils, etc.)
+    ['slideshow-models',   '>= 3.0.2'],   ## Note: pull in all deps via slideshow-models (e.g. props, textutils, etc.)
     ['slideshow-templates','>= 3.0.0'],
     ['gli', '>= 2.13.4']
   ]

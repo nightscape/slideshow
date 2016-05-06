@@ -128,11 +128,9 @@ command [:build, :b] do |c|
     logger.debug 'hello from build command'
     
     PluginLoader.new( config ).load_plugins  # check for optional plugins/extension in ./lib folder
-
-    args.each do |arg|
-      Slideshow::Gen.new( config ).create_slideshow( arg )
-    end
- 
+    
+    ## pass in args array (allow/supports multi files)
+    Slideshow::Build.new( config ).create_slideshow( args ) 
   end
 end
 
@@ -174,11 +172,8 @@ command [:update,:u] do |c|
 
   c.action do |g,o,args|
     logger.debug 'hello from update command'
-
-    ##########
-    # todo: move update to its own command !!!!!!!!!!!!!!!!!!!
     
-    Slideshow::Fetch.new( config ).update()
+    Slideshow::Update.new( config ).update
   end
 end
 
